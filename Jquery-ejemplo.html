@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- SE DEFINE LA CODIFICACIÓN DE CARACTERES Y LA VISTA RESPONSIVA -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SE DEFINE EL TÍTULO DE LA PÁGINA -->
+  <title>Alternar Visibilidad</title>
+  
+  <!-- SE INCLUYE LA BIBLIOTECA DE JQUERY DESDE UN CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+     /* ESTILO PARA EL CUERPO DE LA PÁGINA */
+body {
+    font-family: Arial, sans-serif; /* FUENTE SENCILLA */
+    line-height: 1.6; /* ALTURA DE LÍNEA */
+    background-color: #f5f5f5; /* GRIS CLARO SUAVE */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ESTILO PARA LOS ENCABEZADOS PRINCIPALES (H1, H2) */
+  h1, h2 {
+    color: #444; /* GRIS OSCURO */
+    text-align: center;
+  }
+  
+  /* ESTILO PARA EL ENLACE DE REGRESO */
+  .regreso a {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 18px;
+    color: #fff; /* TEXTO BLANCO */
+    background-color: #555; /* GRIS MEDIO */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  /* HOVER DEL ENLACE DE REGRESO */
+  .regreso a:hover {
+    background-color: #777; /* GRIS MÁS CLARO */
+  }
+  </style>
+</head>
+<body>
+
+  <!-- SE CREA UN BOTÓN CON ID "toggleButton" QUE SERVIRÁ PARA ALTERNAR EL CONTENIDO -->
+  <button id="toggleButton">Alternar Contenido</button>
+  
+  <!-- SE CREA UN DIV CON ID "content" QUE INICIALMENTE ESTÁ OCULTO -->
+  <div id="content" style="display:none;">¡Este es el contenido!</div>
+
+  <script>
+    // SE ESPERA A QUE EL DOCUMENTO SE CARGUE COMPLETAMENTE
+    $(document).ready(function() {
+      
+      // CUANDO SE HACE CLIC EN EL BOTÓN CON ID "toggleButton", SE EJECUTA UNA FUNCIÓN
+      $("#toggleButton").click(function() {
+        
+        // SE ALTERNA LA VISIBILIDAD DEL DIV CON ID "content"
+        $("#content").toggle();
+      });
+    });
+  </script>
+    <!-- ENLACE PARA VOLVER AL MENÚ PRINCIPAL -->
+    <div class="regreso">
+        <a href="Index.html">Volver al menú principal</a>
+    </div>
+
+    <!-- SECCIÓN DE BIBLIOGRAFÍA -->
+    <div class="bibliografia">
+        <h2>Bibliografía</h2>
+        <p>Cyberstream. (2023, 27 noviembre). <i>El funcionamiento de AJAX con jQuery: una guía completa y detallada. </i>Byron Vargas ®. Disponible en: <a href="https://www.byronvargas.com/web/como-funciona-ajax-con-jquery/" target="_blank">https://www.byronvargas.com/web/como-funciona-ajax-con-jquery/</a></p>
+    </div>
+</body>
+</html>

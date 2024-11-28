@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- CAMBIO EL IDIOMA A ESPAÑOL -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validación de Formulario de Prototipo</title> <!-- TÍTULO CAMBIADO A ESPAÑOL -->
+  <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script> <!-- CARGA LA LIBRERÍA PROTOTYPE -->
+   <style>
+         /* ESTILO PARA EL CUERPO DE LA PÁGINA */
+body {
+    font-family: Arial, sans-serif; /* FUENTE SENCILLA */
+    line-height: 1.6; /* ALTURA DE LÍNEA */
+    background-color: #f5f5f5; /* GRIS CLARO SUAVE */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ESTILO PARA LOS ENCABEZADOS PRINCIPALES (H1, H2) */
+  h1, h2 {
+    color: #444; /* GRIS OSCURO */
+    text-align: center;
+  }
+  
+  /* ESTILO PARA EL ENLACE DE REGRESO */
+  .regreso a {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    text-align: center;
+    font-size: 18px;
+    color: #fff; /* TEXTO BLANCO */
+    background-color: #555; /* GRIS MEDIO */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  /* HOVER DEL ENLACE DE REGRESO */
+  .regreso a:hover {
+    background-color: #777; /* GRIS MÁS CLARO */
+  }
+  </style>
+</head>
+<body>
+
+  <form id="myForm"> <!-- FORMULARIO CON EL ID "myForm" -->
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required /> <!-- ES REQUERIDO / OBLIGATORIO -->
+    <br><br>
+    <input type="submit" value="Enviar" /> <!-- ENVIA Y VALIDA EL NOMBRE -->
+  </form>
+
+  <script>
+    // SE EJECUTA CUANDO EL FORMULARIO SE ENVÍA
+    document.getElementById('myForm').onsubmit = function() {
+      // VERIFICA SI EL CAMPO "name" ESTÁ VACÍO
+      if ($('name').value.strip().length == 0) {
+        alert('El nombre no puede estar vacío'); // MUESTRA UNA ALERTA SI ESTÁ VACÍO
+        return false; // IMPIDE EL ENVÍO DEL FORMULARIO
+      }
+      return true; // PERMITE EL ENVÍO DEL FORMULARIO SI EL CAMPO NO ESTÁ VACÍO
+    };
+  </script>
+      <!-- ENLACE PARA VOLVER AL MENÚ PRINCIPAL -->
+      <div class="regreso">
+        <a href="Index.html">Volver al menú principal</a>
+    </div>
+
+    <!-- SECCIÓN DE BIBLIOGRAFÍA -->
+    <div class="bibliografia">
+        <h2>Bibliografía</h2>
+        <p>Kaos. (2009, 23 noviembre). <i>Validar formularios: Jquery, Mootools, etc.</i> Noticias Diseño - Tutorial Photoshop. Disponible en: <a href="https://kaosconcept.net/validar-formularios-con-jquery/" target="_blank">https://kaosconcept.net/validar-formularios-con-jquery/</a></p>
+    </div>
+</body>
+</html>
